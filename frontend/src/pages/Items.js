@@ -60,6 +60,7 @@ const Items = () => {
   };
 
   // 카드 화면 생성을 위한 데이터 전달
+  // 왜 필요? 그냥 item도 배열인데? 단지 id를 tokenId로 바꾸기위해?
   const products = [...Array(item.length)].map((_, index) => {
     return {
       image: item[index].image,

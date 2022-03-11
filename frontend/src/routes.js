@@ -16,7 +16,8 @@ export default function Router() {
       path: '/main',
       element: <MainLayout />,
       children: [
-        { element: <Navigate to="/main" replace /> },
+        // ?? element 역할
+        // { element: <Navigate to="/main" replace /> },
         { path: '', element: <Main /> }
       ]
     },
@@ -33,7 +34,7 @@ export default function Router() {
       path: '/items',
       element: <MainLayout />,
       children: [
-        { element: <Navigate to="/items" replace /> },
+        // { element: <Navigate to="/items" replace /> },
         { path: '', element: <Items /> },
         { path: 'buy/:tokenId', element: <ItemPurchase /> }
       ]
@@ -42,7 +43,7 @@ export default function Router() {
       path: '/register',
       element: <MainLayout />,
       children: [
-        { element: <Navigate to="/register" replace /> },
+        // { element: <Navigate to="/register" replace /> },
         { path: '', element: <ItemRegistration /> },
         { path: 'sale/:tokenId', element: <SaleRegistration /> }
       ]
@@ -51,7 +52,7 @@ export default function Router() {
       path: '/whosart',
       element: <MainLayout />,
       children: [
-        { element: <Navigate to="/whosart" replace /> },
+        // { element: <Navigate to="/whosart" replace /> },
         { path: '', element: <WhosArt /> },
         { path: ':address', element: <WhosArt /> }
       ]

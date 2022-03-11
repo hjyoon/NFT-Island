@@ -47,6 +47,7 @@ const ItemRegistration = () => {
   // Web3
   const web3 = new Web3(new Web3.providers.HttpProvider(process.env.REACT_APP_ETHEREUM_RPC_URL));
 
+  // yup?? formik??
   // 타이핑 헬퍼
   const typeSchema = Yup.object().shape({
     author: Yup.string().required('작가명을 입력해주세요.'),
@@ -70,11 +71,13 @@ const ItemRegistration = () => {
   const { errors, touched, handleSubmit, handleReset, getFieldProps } = formik;
 
   // 찾기 버튼 클릭 핸들링
+  // file등록 input 실행시키는 함수
   const handleClick = () => {
     itemSelect.current.click();
   };
 
   // 아이템 업로드 핸들링
+  // 파일 등록이 일어나면(onChange) 파일 값 넣어주기
   const handleItem = (value) => {
     setItem(value);
 
@@ -83,6 +86,7 @@ const ItemRegistration = () => {
   };
 
   // 모달 핸들링 (등록 승인)
+  // 모달창 열기/닫기
   const toggleApprove = () => {
     setApproveModal(!approveModal);
   };
