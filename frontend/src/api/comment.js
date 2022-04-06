@@ -19,7 +19,7 @@ const deleteCommentAPI = data => {
     return http
         .delete(
             `/comment/${data.commentId}`,
-            { data: { user_address: data.user_address } },
+            { data: { user_address: data.user_address, community_id: data.community_id, } },
             {
                 headers: {
                     'Content-Type': 'application/json',

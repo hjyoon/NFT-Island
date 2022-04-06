@@ -40,8 +40,8 @@ function Comments({
 		// 댓글 삭제 API
 		deleteCommentAPI({
 			commentId,
-			// user_address: test,
 			user_address: loggedUser.address,
+			community_id: communityId,
 		}).then(res => {
 			navigate(`/community/${communityId}/${postId}`, { replace: true });
 		});

@@ -28,7 +28,7 @@ const deleteBoardAPI = data => {
 	return http
 		.delete(
 			`/board/${data.postId}`,
-			{ data: { user_address: data.user_address } },
+			{ data: { user_address: data.user_address, community_id: data.community_id, } },
 			{
 				headers: {
 					'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const createLikeAPI = data => {
 const deleteLikeAPI = data => {
 	console.log('Delete', data);
 	return http
-		.delete('/likes', { data: { board_id: data.board_id, user_address: data.user_address } }, {
+		.delete('/likes', { data: { board_id: data.board_id, user_address: data.user_address, community_id: data.community_id, } }, {
 			headers: {
 				'Content-Type': 'application/json',
 			},

@@ -70,7 +70,11 @@ function PostDetail() {
 	// 게시글 삭제 API, id = 게시글id + useraddress
 	const handleDeleteClose = () => {
 		setOpen(false);
-		deleteBoardAPI({ postId, user_address: loggedUser.address }).then(res => {
+		deleteBoardAPI({
+			postId,
+			user_address: loggedUser.address,
+			community_id: communityId,
+		}).then(res => {
 			navigate(`/community/${communityId}`, { replace: true });
 		});
 	};
@@ -96,6 +100,7 @@ function PostDetail() {
 			deleteLikeAPI({
 				board_id: postId,
 				user_address: loggedUser.address,
+				community_id: communityId,
 			}).then(res => {
 				setLike(false);
 			});
@@ -104,6 +109,7 @@ function PostDetail() {
 			createLikeAPI({
 				board_id: postId,
 				user_address: loggedUser.address,
+				community_id: communityId,
 			}).then(() => {
 				setLike(true);
 				// navigate(`/community/${communityId}/${postId}`, { replace: true });
@@ -123,6 +129,7 @@ function PostDetail() {
 				board_id: postId,
 				user_address: loggedUser.address,
 				content: comment,
+				community_id: communityId,
 			}).then(res => {
 				setComments(prev => [...prev, res.data]);
 			});
